@@ -3,8 +3,7 @@ const router = new Router()
 
 // ping
 router.get('/ping', (ctx, next) => {
-    const {username} = ctx.query
-    ctx.succeed({message: `hello, ${username || 'world'}`})
+    ctx.succeed({message: `hello, world`, query: ctx.query})
   })
 
 // index.html
