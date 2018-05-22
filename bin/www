@@ -71,4 +71,5 @@ function onListening () {
     ? 'pipe ' + addr
     : 'port ' + addr.port
   console.info('Listening on ' + bind)
+  console.info(`http://localhost:${process.env.PORT}`)
 }

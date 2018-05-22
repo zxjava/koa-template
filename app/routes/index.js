@@ -10,7 +10,7 @@ router.get('/ping', (ctx, next) => {
 // index.html
 router.get('/', async (ctx, next) => {
     await ctx.render('index.ejs', {
-      title: 'Hello Word!'
+      title: 'Welcome To My First NODE Project!'
     })
   })
 
