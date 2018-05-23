@@ -1,13 +1,13 @@
-const {Exception} = _require('@/exceptions')
+// const {Exception} = _require('@/exceptions')
 
 const scope = /^\/api\//
 
 const inWhitelist = path => {
   // 正则
   const whitelist = [
-    '/api/user/signIn',
-    /^\/api\/user\/signUp/,
-    /^\/api\/common\//
+    /^\/api\/user\/create$/,
+    /^\/api\/user\/signUp$/,
+    /^\/api\/user\/signOut$/
   ]
 
   let result = false
@@ -21,7 +21,7 @@ const inWhitelist = path => {
 
 module.exports = async (ctx, next) => {
   const path = ctx.path
-  const headers = ctx.headers
+  // const headers = ctx.headers
 
   // 路由过滤
   if (scope.test(path) && !inWhitelist(path)) {
